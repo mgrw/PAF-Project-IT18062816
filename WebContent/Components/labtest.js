@@ -80,23 +80,50 @@ function validateLabTestForm()
 	{
 		return "PatientID";
 	} 
+	
+	// is numerical value
+	var tmpPatientID = $("#PatientID").val().trim();
+	if (!$.isNumeric(tmpPatientID))
+	{
+	return "Insert a numerical value for PatientID.";
+	}
+	
 	if ($("#TestName").val().trim() == "")
 	{
 		return "TestName";
 	}
+	
 	if ($("#TestType").val().trim() == "")
 	{
 		return "Insert TestType";
+	}
+	
+	// is String value
+	var tmpTestType = $("#TestType").val().trim();
+	if ($.isNumeric(tmpTestType))
+	{
+	return "Insert a Valid TestType (Starts with letters!)";
 	}
 	
 	if ($("#TestDescription").val().trim() == "")
 	{
 		return "Insert TestDescription";
 	}
+	
+	
+	//is String value
+	var tmpTestDescription = $("#TestDescription").val().trim();
+	if ($.isNumeric(tmpTestDescription))
+	{
+	return "Insert a Valid TestDescription (Starts with letters!)";
+	}
+	
+	
 	if ($("#LabDate").val().trim() == "")
 	{
 		return "Insert LabDate";
 	}
+	
 
 	return true;
 }
